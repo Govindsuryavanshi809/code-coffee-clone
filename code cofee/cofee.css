@@ -1,0 +1,1613 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-color:rgb(176, 148, 96); 
+}
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+ body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgb(62, 63, 63);
+    display: flex;
+    height: 15%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 7%;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1000;
+}
+
+.header .logo img {
+    height: 8rem;
+}
+
+.navbar a {
+    margin: 0  2rem;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    position: relative;
+    color: white;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: all 0.4s ease-out;
+}
+
+.navbar a:hover::after {
+    transform: scale(1);
+    color: beige;
+    transform-origin: bottom left;
+}
+
+.header .icon svg {
+    color: white;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icon svg:hover {
+    color: rgb(187, 156, 136);
+}
+
+.header .icon .menu1 {
+    display: none;
+}
+
+.header .search-from {
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background-color: white;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-from .active {
+    transform: scaleY(1);
+
+}
+.header .search-from input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: black;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.header .search-from label {
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: black;
+}
+
+.header .cart-container {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: calc(100vh - 9.5rem);
+    width: 26rem;
+    background-color: white;
+    padding: 0 1.5rem;
+}
+
+.header .cart-container .active {
+    right: 0;
+}
+.header .cart-container .cart-item {
+    position: relative;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header .cart-container .cart-item .cards-sa {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+}
+.cart .cards-sa {
+    margin-top: 20px;
+}
+.header .cart-container .cart-item .cards-sa:hover {
+    color: bisque;
+}
+
+.header .cart-container .cart-item img {
+    height: 5rem;
+    /* margin: 7px; */
+    margin-top: 10px;
+    cursor: pointer;
+    /* padding-bottom: .1rem; */
+    margin-inline-start: 0px;
+    margin: px;
+}
+
+.header .cart-container .cart-item .content-1 {
+    margin-left: 0px;
+    margin-inline-start: 60px;
+
+}
+.header .cart-container .cart-item .content-1 h3 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    position: absolute;
+    color: black;
+    margin-left: -30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.header .cart-container .cart-item .content-2 {
+    margin-left: 40px;
+    margin-inline-start: 63px;
+
+}
+.header .cart-container .cart-item .content-2 h3 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    position: absolute;
+    color: black;
+    margin-left: -30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.header .cart-container .cart-item .content-3 {
+    margin-left: 30px;
+    margin-inline-start: 70px;
+
+}
+.header .cart-container .cart-item .content-3 h3 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    position: absolute;
+    color: black;
+    margin-left: -50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.header .cart-container .cart-item .content-4 {
+    margin-left: 40px;
+    margin-inline-start: 65px;
+
+}
+.header .cart-container .cart-item .content-4 h3 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    position: absolute;
+    color: black;
+    margin-left: -40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.header .cart-container .cart-item .content {
+    margin-left: 50px;
+    margin-inline-start: 60px;
+
+}
+.header .cart-container .cart-item .content h3 {
+    font-size: 2rem;
+    /* margin-left: 40px; */
+    /* margin-left: 10px; */
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.header .cart-container .cart-item .content-1 .price {
+    font-size: 1.2rem;
+    color: rgb(110, 105, 105);
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.header .cart-container .cart-item .content-2 .price {
+    font-size: 1.2rem;
+    position: absolute;
+    color: rgb(110, 105, 105);
+    margin-top: 10px;
+    margin-left: -10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.header .cart-container .cart-item .content-3 .price {
+    font-size: 1.2rem;
+    position: absolute;
+    color: rgb(110, 105, 105);
+    margin-top: 10px;
+    margin-left: -25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.header .cart-container .cart-item .content-4 .price {
+    font-size: 1.2rem;
+    position: absolute;
+    margin-top: 10px;
+    color: rgb(110, 105, 105);
+    margin-left: -18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: .5rem;
+}
+
+.cart-item .cart {
+    margin-top: 50px;
+}
+
+.header .btn {
+    /* border: 2px solid black; */
+    padding: 7px 15px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.header .btn:hover {
+    letter-spacing: .2rem; 
+    background-color: burlywood;
+}
+
+@media (max-width:991px) {
+    html {
+        font-size:55%;
+        
+    }
+    .header {
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (max-width:768px) {
+
+    .header .icon .menu1 {
+        display: inline-block;
+    }
+        
+    
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: white;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .header .navbar .active {
+        right: 0;
+    }
+    .header .navbar a {
+        display: block;
+        margin: 1.5rem;
+        font-size: 2rem;
+        color: black;
+        padding: .5rem;
+    }
+    
+    .header .search-from {
+        width: 90%;
+        right: 2rem;
+    } 
+
+    .home {
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home .main h3 {
+        font-size: 4.5rem;
+    }
+
+    .home .main p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size:50%; 
+    }
+    
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(./grm1.avif);
+    background-size: cover;
+    background-position: left;
+    /* max-width: 60rem; */
+    /* background: 7rem; */
+    padding: 2rem 7rem;
+}
+.main {
+    max-width: 60rem;
+    margin-top: 110px;
+}
+
+.home .main h3 {
+    font-size: 6rem;
+    color: white;
+    letter-spacing: 0.6;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.home .main p {
+    font-size: 2rem;
+    color: #696464;
+    line-height: 1.8;
+   padding: 1rem 0;
+   opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ .btn2 {
+    /* border: 2px solid black; */
+    padding: 10px 26px;
+    /* width: 100%; */
+    margin-top: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    background-color: rgb(240, 211, 172);
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    /* border-radius: 6px; */
+}
+
+ .btn2:hover {
+    letter-spacing: .2rem;
+    background-color: burlywood;
+}
+
+
+.head {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 4.5rem;
+    padding-top: 4.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1.6px;
+    font-size: 4rem;
+}
+
+.head span {
+    text-transform: uppercase;
+    color: burlywood;
+}
+
+.about {
+    padding: 2rem 7rem;
+
+}
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: rgb(21, 24, 31);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.about .row .image {
+    flex: 1 1 45rem;
+}
+
+.about .row .image img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 3.4rem;
+    letter-spacing: 0.7px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ccc;
+}
+
+.menu {
+    height: 100vh;
+    /* display: flex; */
+    margin-top: 1px;
+    align-items: center;
+    /* background-color: red; */
+    /* max-width: 60rem; */
+    /* background: 7rem; */
+    padding: 2rem 7rem;
+}
+
+.menu .head2 {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 4.5rem;
+    margin-left: 590px;
+    margin-top: -600px;
+    position: absolute;
+    /* margin: -30px; */
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1.6px;
+    font-size: 4rem;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.menu .head2 span {
+    text-transform: uppercase;
+    color: burlywood;
+}
+
+.box-container {
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    margin-top: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 1.5rem;
+    /* background-color: yellow; */
+}
+
+.box-container .box {
+    padding: 5rem;
+    text-align: center;
+    border: 2px solid rgb(40, 38, 38);
+}
+
+.box-container .box:hover {
+    background-color: #fff;
+}
+
+.box-container .box:hover > * {
+    color: var(--black);
+}
+
+.box-container .box .box1 {
+    height: 55%;
+    margin-left: 100px;
+    width: 40%;
+    border-radius: 50%;
+    background-image: url(./cofee3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.box-container .box  h2 {
+    font-size: 22px;
+    position: absolute;
+    margin-left: -8px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 150px;
+}
+
+.box-container .box  h3 {
+    font-size: 20px;
+    position: absolute;
+    margin-left: 17px;
+    color: rgb(214, 202, 202);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 184px;
+}
+
+.box-container .box .btn3 {
+        /* border: 2px solid black; */
+        padding: 8px 30px ;
+       margin-left: -69px;
+        position: absolute;
+        margin-top: 220px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 17px;
+        display: inline-block;
+        background-color: rgb(240, 211, 172);
+        cursor: pointer;
+        /* border-radius: 6px; */
+    
+}
+.box-container .box .btn3:hover {
+    letter-spacing: .2rem;
+    background-color: burlywood;
+}
+
+.box-container .box  h3 span {
+    font-size: 12px;
+    /* position: absolute; */
+    margin-left: 0px;
+    color: rgb(203, 189, 189);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 180px;
+}
+
+.box-container .box .box2 {
+    height: 55%;
+    margin-left: 100px;
+    
+    width: 40%;
+    border-radius: 50%;
+    background-image: url(./cofee5.avif);
+    background-size: cover;
+    background-position: center;
+}
+
+.box-container .box .box3 {
+    height: 55%;
+    margin-left: 100px;
+    width: 40%;
+    border-radius: 50%;
+    background-image: url(./cofee6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.box-container .box .box4 {
+    height: 55%;
+    margin-left: 100px;
+    width: 40%;
+    border-radius: 50%;
+    background-image: url(./cofee8.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.box-container .box .box5 {
+    height: 55%;
+    margin-left: 100px;
+    width: 40%;
+    border-radius: 50%;
+    background-image: url(./cofee9.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.box-container .box .box6 {
+    height: 55%;
+    margin-left: 100px;
+    width: 40%;
+    border-radius: 50%;
+    background-image: url(./cpo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.product {
+    height: 100vh;
+    /* background-color: red; */
+    padding: 2rem 7rem;
+    margin-top: 160px;
+}
+
+.product .pro {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 20px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.product .pro span {
+    text-align: center;
+    font-size: 4rem;
+    color: burlywood;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.product .bada {
+    /* position: absolute; */
+    height: 80%;
+    width: 100%;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 1.5rem;
+    /* background-color: yellow; */
+}
+
+.bada .bada1 {
+    padding: 5rem;
+    text-align: center;
+    border: 2px solid rgb(40, 38, 38);
+}
+
+.bada .bada1:hover {
+    background-color: #fff;
+}
+.bada .bada1:hover > * {
+    color: var(--black);
+}
+
+.bada .bada1 img {
+    height: 75%;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all ease .3s;
+    
+}
+
+.bada .bada1 img:hover {
+    transform: scale(1.1);
+}
+.bada .bada2 {
+    padding: 5rem;
+    text-align: center;
+    border: 2px solid rgb(40, 38, 38);
+}
+
+.bada .bada2:hover {
+    background-color: #fff;
+}
+.bada .bada2:hover > * {
+    color: var(--black);
+}
+
+.bada .bada2 img {
+    height: 79%;
+    cursor: pointer;
+    margin-top: 50px;  
+    transition: all ease-in .3s;
+}
+
+.bada .bada2 img:hover {
+    transform: scale(1.1);
+}
+.bada .bada3 {
+    padding: 5rem;
+    text-align: center;
+    border: 2px solid rgb(40, 38, 38);
+}
+
+.bada .bada3:hover {
+    background-color: #fff;
+}
+.bada .bada3:hover > * {
+    color: var(--black);
+}
+
+.bada .bada3 img {
+    height: 61%;
+    cursor: pointer;
+    margin-top: 57px; 
+    transition: all ease-in .3s;
+}
+
+.bada .bada3 img:hover {
+    transform: scale(1.1);
+}
+
+.bada .icc {
+    margin-top: -50px;
+}
+
+.bada .icc1 {
+    margin-top: -355px;
+}
+
+.bada .icc1 .icn  {
+    border: 0.6px solid rgb(40, 38, 38);
+    margin: 2px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    padding: 4px;
+    height: 40px;
+    width: 40px;
+}
+
+.bada .icc .icn  {
+    border: 0.6px solid rgb(40, 38, 38);
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    padding: 4px;
+    height: 40px;
+    width: 40px;
+}
+
+.bada  .theo {
+   position: absolute;
+   margin-top: 350px;
+   margin-left: 110px;
+}
+
+.bada  .theo h3 {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    margin-left: -35px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 12px;
+    margin-top: -50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.bada  .theo h3:hover {
+    color: black;
+}
+.bada  .theo h4 {
+    font-size: 29px;
+    color: rgb(229, 224, 215);
+    margin-left: -35px;
+    padding: 12px;
+    margin-top: -5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bada  .theo h4 span {
+    font-size: 16px;
+    color: rgb(143, 134, 117);
+    /* margin-left: -35px; */
+    padding: 2px;
+    /* margin-top: -50px; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bada  .theo .svg {
+    margin-left: -37px;
+    font-size: 20px;
+    margin-top: 2px;
+    color: burlywood;
+}
+.bada .icc2 {
+    margin-top: -410px;
+    position: relative;
+}
+
+.bada .icc2 .icn  {
+    border: 0.6px solid rgb(40, 38, 38);
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    padding: 4px;
+    height: 40px;
+    width: 40px;
+}
+.bada .icc2 .icn:hover {
+    color: black;
+}
+.bada .icc .icn  {
+    border: 0.6px solid rgb(40, 38, 38);
+    margin: 2px;
+    border-radius: 4px;
+    color: white;
+    padding: 4px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+.bada .icc1 .icn:hover {
+    color: black;
+}
+.bada .icc3 {
+    margin-top: -340px;
+}
+
+.bada .icc3 .icn  {
+    border: 0.6px solid rgb(40, 38, 38);
+    margin: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    padding: 4px;
+    height: 40px;
+    width: 40px;
+}
+
+.bada .icc3 .icn:hover {
+    color: black;
+}
+/* .bada .icc .icn  {
+    border: 0.6px solid rgb(40, 38, 38);
+    margin: 2px;
+    border-radius: 4px;
+    color: white;
+    padding: 4px;
+    height: 40px;
+    width: 40px;
+} */
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+        color: cyan;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+        color: salmon;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+        color: rgb(65, 56, 65);
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+        color: dimgray;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.review {
+    height: 100vh;
+    /* background-color: red; */
+    padding: 2rem 7rem;
+    margin-top: 0px;
+}
+
+.review .pro {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 20px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.review .pro span {
+    text-align: center;
+    font-size: 4rem;
+    color: burlywood;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.review .bada {
+    /* position: absolute; */
+    height: 80%;
+    width: 100%;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 1.5rem;
+    /* background-color: yellow; */
+}
+
+.bada1 .quate {
+    margin-top: -20px;
+}
+
+.bada1 .quate svg {
+    color: burlywood;
+    height: 50px;
+    margin-inline: 0px;
+    width: 50px;
+}
+
+.bada1 p {
+    font-size: 17px;
+    margin-top: 20px;
+    padding:  0 10  10px;
+    color: rgb(171, 164, 164);
+    letter-spacing: 1px;
+    width: 100%;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+    line-height: 1.5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bada1 .man {
+    height: 26%;
+    width: 32%;
+    border-radius: 50%;
+    background-image: url(./man.jpg);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    margin-left: 120px;
+    margin-top: 30px;
+    transition: all ease .3s;
+}
+
+.bada1 .man:hover {
+    transform: scale(1.1);
+}
+
+.bada1 h5 {
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.bada2 h5 {
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.bada3 h5 {
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.bada2 .man1 {
+    height: 26%;
+    width: 32%;
+    border-radius: 50%;
+    background-image: url(./man2.png);
+    background-size: cover;
+    cursor: pointer;
+    background-position: center;
+    margin-left: 120px;
+    margin-top: 30px;
+    transition: all ease .3s;
+}
+
+.bada2 .man1:hover {
+    transform: scale(1.1);
+}
+
+.bada3 .man2 {
+    height: 26%;
+    width: 32%;
+    border-radius: 50%;
+    background-image: url(./man3.jpg);
+    background-size: cover;
+    cursor: pointer;
+    background-position: center;
+    margin-left: 120px;
+    margin-top: 30px;
+    transition: all ease .3s;
+}
+
+.bada3 .man2:hover {
+    transform: scale(1.1);
+}
+
+.bada2 p {
+    font-size: 17px;
+    margin-top: 20px;
+    padding:  0 10  10px;
+    color: rgb(171, 164, 164);
+    letter-spacing: 1px;
+    width: 100%;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+    line-height: 1.5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bada3 p {
+    font-size: 17px;
+    margin-top: 20px;
+    padding:  0 10  10px;
+    color: rgb(171, 164, 164);
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+    width: 100%;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bada2 .quate {
+    margin-top: -20px;
+}
+
+.bada2 .quate svg {
+    color: burlywood;
+    height: 50px;
+    margin-inline: 0px;
+    width: 50px;
+}
+
+.bada3 .quate {
+    margin-top: -20px;
+}
+
+.bada3 .quate svg {
+    color: burlywood;
+    height: 50px;
+    margin-inline: 0px;
+    width: 50px;
+}
+
+.svg1 {
+    margin-left: 7px;
+    font-size: 20px;
+    margin-top: -4px;
+    color: burlywood;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.contact {
+    height: 100vh;
+    /* background-color: red; */
+    padding: 2rem 7rem;
+    margin-top: 0px;
+    /* background-color: red; */
+}
+
+.contact 
+    .pro {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 20px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contact 
+    .pro span {
+    text-align: center;
+    font-size: 4rem;
+    color: burlywood;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contact .row {
+    height: 75%;
+    margin-top: 70px;
+    width: 100%;
+    /* margin-top: 40px; */
+    display: flex;
+    /* background-color: yellow; */
+    background-color: rgb(21, 24, 31);
+
+}
+
+.contact .row1 {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(52, 52, 47);
+}
+.contact .row1 .maps {
+    height: 100%;
+    width: 100%;
+}
+
+.contact .row2 {
+    height: 100%;
+    width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* background-color: rgb(43, 255, 0); */
+}
+
+.contact .row2 form {
+    padding: 2rem 7rem;
+}
+
+.contact .row2 form h3 {
+    text-align: center;
+    font-size: 40px;
+    /* position: absolute; */
+    margin-top: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    letter-spacing: 1px ;
+    padding: 0px;
+    text-transform: uppercase;
+}
+
+.contact .row2 form .input-box {
+    margin: 10px;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0 0 5px rgb(240, 233, 233);
+    margin-top: 40px;
+    margin-inline: 0px;
+    /* margin-top: 100px; */
+    padding: -8px 20px;   
+}
+
+.contact .row2 form .input-box  input {
+    font-size: 20px;
+    background-color: black;
+    width: 100%;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 14px 50px;
+}
+
+.input-box  .user svg {
+    margin-top: 13px;
+    margin-left: 9px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+}
+
+.input-box  .mail svg {
+    margin-top: 13px;
+    margin-left: 9px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+}
+
+.input-box  .phone svg {
+    margin-top: 13px;
+    margin-left: 9px;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+}
+.noo {
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgb(178, 174, 174);
+    background-color: burlywood;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.noo:hover {
+    background-color: burlywood;  
+    letter-spacing: .2rem; 
+
+}
+
+.blog {
+    height: 90vh;
+    /* background-color: red; */
+    padding: 2rem 7rem;
+    margin-top: -40px;
+    /* background-color: red; */
+}
+
+.blog 
+    .pro {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 10px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.blog 
+    .pro span {
+    text-align: center;
+    font-size: 4rem;
+    color: burlywood;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.blog .blo {
+    height: 90%;
+    margin-top: 40px;
+    /* padding: 2rem 7rem; */
+    width: 100%;
+    display: grid;
+    /* border: 2px solid black; */
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 1.5rem;
+    /* background-color: rgb(64, 255, 0); */
+}
+
+.blog .blo .blo1 {
+    height: 100%;
+    border: 0.6px solid rgb(40, 38, 38);
+    width: 100%;
+    /* background-color: white;   */
+}
+
+.blog .blo .blo1 .blo1-u {
+    height: 50%;
+    width: 100%;
+    /* background-image: url(./cofee8.jpg); */
+    object-position: center;
+    object-fit: cover;
+}
+
+.blog .blo .blo1 .blo1-u img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.blog .blo .blo1 .blo1-u img:hover {
+    transform: scale(1);
+} 
+
+.blog .blo .blo1 .blo1-d {
+    height: 50%;
+    width: 100%;
+    /* background-color: rgb(68, 6, 135); */
+}
+
+.blog .blo .blo1 .blo1-d h2 {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px;
+    color: white;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    text-align: center;
+}
+
+.blog .blo .blo1 .blo1-d h3 {
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* padding: 15px; */
+    color: burlywood;
+    text-align: center;
+}
+
+.blog .blo .blo1 .blo1-d p {
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px;
+    line-height: 27px;
+    letter-spacing: 0.6px;
+    color: burlywood;
+    text-align: center;
+}
+
+.blog .blo .blo1 .blo1-d .read {
+    padding: 10px 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 150px;
+    margin-top: 15px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1s;
+    border: none;
+    background-color: burlywood;
+}
+
+.blog .blo .blo1 .blo1-d .read:hover {
+    letter-spacing: .2rem;
+    color: white;
+}
+
+.blog .blo .blo2 {
+    height: 100%;
+    width: 100%;
+    border: 0.6px solid rgb(40, 38, 38);
+    /* background-color: white;   */
+}
+
+.blog .blo .blo2 .blo2-u {
+    height: 50%;
+    width: 100%;
+    background-image: url(./cofee5.avif);
+    background-size: cover;
+    background-position: center;
+}
+
+.blog .blo .blo2 .blo2-d {
+    height: 50%;
+    width: 100%;
+    /* background-color: rgb(68, 6, 135); */
+}
+
+.blog .blo .blo2 .blo2-d h2 {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px;
+    color: white;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    text-align: center;
+}
+
+.blog .blo .blo2 .blo2-d h3 {
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* padding: 15px; */
+    color: burlywood;
+    text-align: center;
+}
+
+.blog .blo .blo2 .blo2-d p {
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px;
+    line-height: 27px;
+    letter-spacing: 0.6px;
+    color: burlywood;
+    text-align: center;
+}
+
+.blog .blo .blo2 .blo2-d .read {
+    padding: 10px 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 150px;
+    margin-top: 15px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1s;
+    border: none;
+    background-color: burlywood;
+}
+
+.blog .blo .blo2 .blo2-d .read:hover {
+    letter-spacing: .2rem;
+    color: white;
+}
+
+.blog .blo .blo3 {
+    height: 100%;
+    width: 100%;
+    border: 0.6px solid rgb(40, 38, 38);
+    /* background-color: white;   */
+}
+
+.blog .blo .blo3 .blo3-u {
+    height: 50%;
+    width: 100%;
+    background-image: url(./cofee10.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.blog .blo .blo3 .blo3-d {
+    height: 50%;
+    width: 100%;
+    /* background-color: rgb(68, 6, 135); */
+}
+
+
+.blog .blo .blo3 .blo3-d:hover {
+    background-color: white;
+    color: black;
+}
+
+.blog .blo .blo2 .blo2-d:hover {
+    background-color: white;
+    color: black;
+}
+
+.blog .blo .blo1 .blo1-d:hover {
+    background-color: white;
+    color: black;
+}
+
+.blog .blo .blo3 .blo3-d h2 {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    color: white;
+    text-align: center;
+}
+
+.blog .blo .blo3 .blo3-d h3 {
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* padding: 15px; */
+    color: burlywood;
+    text-align: center;
+}
+
+.blog .blo .blo3 .blo3-d p {
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px;
+    line-height: 27px;
+    letter-spacing: 0.6px;
+    color: burlywood;
+    text-align: center;
+}
+
+.blog .blo .blo3 .blo3-d .read {
+    padding: 10px 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 150px;
+    margin-top: 15px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1s;
+    border: none;
+    background-color: burlywood;
+}
+
+.blog .blo .blo3 .blo3-d .read:hover {
+    letter-spacing: .2rem;
+    color: white;
+}
+
+.footer {
+    background-color: rgb(39, 42, 51);
+    /* background-color: red; */
+    height: 20%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.footer .share {
+    padding: 1rem 0;
+}
+
+.footer .share svg {
+    height: 4rem;
+    width: 4rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    margin: 1rem;
+    padding: 5px;
+    border:  2px solid black;
+    border-radius:50% ;
+    margin-top: 10px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.footer .share svg:hover {
+    background-color: aquamarine;
+    color: black;
+}
+
+.footer .link {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    gap: 1rem;
+
+}
+
+.footer .link a {
+    padding: .7rem 2rem ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    border: 2px solid black;
+    text-decoration: none;
+    font-size: 2rem;
+
+}
+
+.footer .link a:hover {
+    background-color: rgb(203, 165, 96);
+    color: black;   
+}
+
+.footer .credit {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer .credit span {
+    color: rgb(117, 112, 106);
+}
